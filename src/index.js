@@ -1,7 +1,3 @@
-import _ from 'lodash';
-
-export function hello(event, context, callback) {
-    console.log(_.snakeCase('My furst lambda function'));
-
-    callback(null, _.snakeCase('fuck yeah'));
-}
+// Import handlers.
+export hello from './handlers/hello';
+export world from './handlers/world';

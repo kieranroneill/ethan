@@ -1,0 +1,46 @@
+machine:
+  timezone:
+    Europe/London
+
+  environment:
+    YARN_VERSION: 0.20.3
+    PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+  node:
+    # LTS (as of 12/04/2017)
+    version: 6.10.2
+
+dependencies:
+  pre:
+    - |
+      if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+        curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+      else
+        echo "The correct version of Yarn is already installed."
+      fi
+  cache_directories:
+    - ~/.yarn
+    - ~/.cache/yarn
+  override:
+    - yarn install
+    - yarn run build
+
+test:
+  override:
+    - yarn run lint
+    #- yarn test
+#  post:
+#    # Save JUnit style test data for the test summary section.
+#    - mkdir -p $CIRCLE_TEST_REPORTS/junit && cp test-results.xml $CIRCLE_TEST_REPORTS/junit
+#    # Save coverage reports as an artifact.
+#    - mkdir -p $CIRCLE_ARTIFACTS/coverage && cp -r ./coverage/* $CIRCLE_ARTIFACTS/coverage
+
+
+deployment:
+  master:
+    branch: master
+    commands:
+      # Configure AWS credentials.
+      - ./bin/configure-aws.sh
+      # Deploy using serverless.
+      - yarn run deploy
