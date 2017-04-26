@@ -18,6 +18,8 @@ dependencies:
       else
         echo "The correct version of Yarn is already installed."
       fi
+    # Install serverless as a globally dependency.
+    - yarn install serverless -g
   cache_directories:
     - ~/.yarn
     - ~/.cache/yarn
