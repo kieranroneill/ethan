@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 // Config.
-import defaults from '../../config/defaults';
+import defaults from '../config/defaults';
 
 import BaseLexResponse from './BaseLexResponse';
 

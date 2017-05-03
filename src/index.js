@@ -1,2 +1,2 @@
 // Import handlers.
-export hello from './handlers/identify';
+export hello from './handlers/hello';

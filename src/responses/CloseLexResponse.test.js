@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 // Config.
-import defaults from '../../config/defaults';
+import defaults from '../config/defaults';
 
 // Module.
 import CloseLexResponse from './CloseLexResponse';
@@ -23,6 +23,14 @@ describe('CloseLexResponse', () => {
             expect(this.response.dialogActions.fulfillmentState)
                 .to.equal(defaults.response.dialog.fulfillmentState.fulfilled);
             expect(this.response.dialogActions.message.content).to.be.undefined;
+        });
+
+        it('should initialise with parameters', function() {
+            this.response = new CloseLexResponse(message, false);
+
+            expect(this.response.dialogActions.type).to.equal(defaults.response.dialog.type.close);
+            expect(this.response.dialogActions.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.failed);
+            expect(this.response.dialogActions.message.content).to.equal(message);
         });
     });
 

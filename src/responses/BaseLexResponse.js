@@ -1,5 +1,5 @@
 // Config.
-import defaults from '../../config/defaults';
+import defaults from '../config/defaults';
 
 class BaseLexResponse {
     constructor() {
