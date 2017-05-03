@@ -1,4 +1,20 @@
 const defaults = {
+    input: {
+        confirmationStatus: {
+            confirmed: 'Confirmed',
+            denied: 'Denied',
+            none: 'None'
+        },
+        invocationSource: {
+            dialogCodeHook: 'DialogCodeHook',
+            fulfillmentCodeHook: 'FulfillmentCodeHook' // Expects a response.
+        },
+        outputDialogMode: {
+            text: 'Text',
+            voice: 'Voice'
+        }
+    },
+
     response: {
         card: {
             contentType: {
