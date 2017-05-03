@@ -2,9 +2,9 @@
 import defaults from '../config/defaults';
 
 class BaseLexResponse {
-    constructor() {
-        this.sessionAttributes = null;
-        this.dialogActions = {
+    constructor(sessionAttributes = {}) {
+        this.sessionAttributes = sessionAttributes;
+        this.dialogAction = {
             type: defaults.response.dialog.type.elicitIntent,
             fulfillmentState: defaults.response.dialog.fulfillmentState.fulfilled,
             message: {

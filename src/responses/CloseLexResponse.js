@@ -5,19 +5,19 @@ import defaults from '../config/defaults';
 import BaseLexResponse from './BaseLexResponse';
 
 class CloseLexResponse extends BaseLexResponse {
-    constructor(message, isFulfilled = true) {
-        super();
+    constructor(sessionAttributes, message, isFulfilled = true) {
+        super(sessionAttributes);
 
-        this.dialogActions.type = defaults.response.dialog.type.close;
-        this.dialogActions.fulfillmentState = (isFulfilled ?
+        this.dialogAction.type = defaults.response.dialog.type.close;
+        this.dialogAction.fulfillmentState = (isFulfilled ?
             defaults.response.dialog.fulfillmentState.fulfilled : defaults.response.dialog.fulfillmentState.failed);
 
         // Message.
-        this.dialogActions.message.content = message;
+        this.dialogAction.message.content = message;
     }
 
     setResponseMessage(message) {
-        this.dialogActions.message.content = message;
+        this.dialogAction.message.content = message;
     }
 
     /**
@@ -25,22 +25,22 @@ class CloseLexResponse extends BaseLexResponse {
      * @returns {Object}
      */
     toResponse() {
+        let dialogAction = {
+            type: this.dialogAction.type,
+            fulfillmentState: this.dialogAction.fulfillmentState
+        };
+
         // If we have a message, return it.
-        if(this.dialogActions.message.content) {
-            return {
-                dialogActions: {
-                    type: this.dialogActions.type,
-                    fulfillmentState: this.dialogActions.fulfillmentState,
-                    message: this.dialogActions.message
-                }
+        if(this.dialogAction.message.content) {
+            dialogAction = {
+                message: this.dialogAction.message,
+                ...dialogAction
             };
         }
 
         return {
-            dialogActions: {
-                type: this.dialogActions.type,
-                fulfillmentState: this.dialogActions.fulfillmentState
-            }
+            sessionAttributes: this.sessionAttributes,
+            dialogAction: dialogAction
         };
     }
 }

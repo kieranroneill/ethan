@@ -19,18 +19,18 @@ describe('CloseLexResponse', () => {
 
     describe('when initialising', function() {
         it('should initialise with defaults', function() {
-            expect(this.response.dialogActions.type).to.equal(defaults.response.dialog.type.close);
-            expect(this.response.dialogActions.fulfillmentState)
+            expect(this.response.dialogAction.type).to.equal(defaults.response.dialog.type.close);
+            expect(this.response.dialogAction.fulfillmentState)
                 .to.equal(defaults.response.dialog.fulfillmentState.fulfilled);
-            expect(this.response.dialogActions.message.content).to.be.undefined;
+            expect(this.response.dialogAction.message.content).to.be.undefined;
         });
 
         it('should initialise with parameters', function() {
-            this.response = new CloseLexResponse(message, false);
+            this.response = new CloseLexResponse({}, message, false);
 
-            expect(this.response.dialogActions.type).to.equal(defaults.response.dialog.type.close);
-            expect(this.response.dialogActions.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.failed);
-            expect(this.response.dialogActions.message.content).to.equal(message);
+            expect(this.response.dialogAction.type).to.equal(defaults.response.dialog.type.close);
+            expect(this.response.dialogAction.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.failed);
+            expect(this.response.dialogAction.message.content).to.equal(message);
         });
     });
 
@@ -38,7 +38,7 @@ describe('CloseLexResponse', () => {
         it('should set the response message', function() {
             this.response.setResponseMessage(message);
 
-            expect(this.response.dialogActions.message.content).to.equal(message);
+            expect(this.response.dialogAction.message.content).to.equal(message);
         });
     });
 
@@ -46,16 +46,18 @@ describe('CloseLexResponse', () => {
         it('should return the default response', function() {
             const result = this.response.toResponse();
 
-            expect(result.dialogActions).to.have.property('type');
-            expect(result.dialogActions.type).to.equal(defaults.response.dialog.type.close);
+            expect(result).to.have.property('sessionAttributes');
 
-            expect(result.dialogActions).to.have.property('fulfillmentState');
-            expect(result.dialogActions.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.fulfilled);
+            expect(result.dialogAction).to.have.property('type');
+            expect(result.dialogAction.type).to.equal(defaults.response.dialog.type.close);
 
-            expect(result.dialogActions).to.not.have.property('message');
-            expect(result.dialogActions).to.not.have.property('intentName');
-            expect(result.dialogActions).to.not.have.property('slots');
-            expect(result.dialogActions).to.not.have.property('slots');
+            expect(result.dialogAction).to.have.property('fulfillmentState');
+            expect(result.dialogAction.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.fulfilled);
+
+            expect(result.dialogAction).to.not.have.property('message');
+            expect(result.dialogAction).to.not.have.property('intentName');
+            expect(result.dialogAction).to.not.have.property('slots');
+            expect(result.dialogAction).to.not.have.property('slots');
 
             expect(result).to.not.have.property('responseCard');
         });
@@ -67,19 +69,19 @@ describe('CloseLexResponse', () => {
 
             result = this.response.toResponse();
 
-            expect(result.dialogActions).to.have.property('type');
-            expect(result.dialogActions.type).to.equal(defaults.response.dialog.type.close);
+            expect(result.dialogAction).to.have.property('type');
+            expect(result.dialogAction.type).to.equal(defaults.response.dialog.type.close);
 
-            expect(result.dialogActions).to.have.property('fulfillmentState');
-            expect(result.dialogActions.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.fulfilled);
+            expect(result.dialogAction).to.have.property('fulfillmentState');
+            expect(result.dialogAction.fulfillmentState).to.equal(defaults.response.dialog.fulfillmentState.fulfilled);
 
-            expect(result.dialogActions).to.have.property('message');
-            expect(result.dialogActions.message).to.have.property('content')
+            expect(result.dialogAction).to.have.property('message');
+            expect(result.dialogAction.message).to.have.property('content')
                 .to.equal(message);
 
-            expect(result.dialogActions).to.not.have.property('intentName');
-            expect(result.dialogActions).to.not.have.property('slots');
-            expect(result.dialogActions).to.not.have.property('slots');
+            expect(result.dialogAction).to.not.have.property('intentName');
+            expect(result.dialogAction).to.not.have.property('slots');
+            expect(result.dialogAction).to.not.have.property('slots');
 
             expect(result).to.not.have.property('responseCard');
         });

@@ -8,7 +8,8 @@ describe('hello handler', () => {
         hello(mockInputEvent, null, (error, response) => {
             expect(error).to.be.null;
 
-            expect(response).to.have.property('dialogActions');
+            expect(response).to.have.property('sessionAttributes');
+            expect(response).to.have.property('dialogAction');
 
             done();
         });
