@@ -1,4 +1,4 @@
-# Reecho
+# Grub
 
 [![CircleCI](https://circleci.com/gh/kieranroneill/reecho/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/reecho/tree/master)
 
@@ -8,7 +8,7 @@
 
 * Install [Node.js v6.10.2+](https://nodejs.org/en/)
 * Install [Yarn](https://yarnpkg.com/lang/en/docs/install)
-* Install Serverless `yarn global add serverless`
+* Install [Serverless](https://serverless.com/) `yarn global add serverless`
 * Install dependencies `yarn install`
 
 ## Testing
