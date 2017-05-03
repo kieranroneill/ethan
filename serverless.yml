@@ -1,4 +1,4 @@
-service: interpret
+service: grub
 
 plugins:
   - serverless-webpack
@@ -8,18 +8,11 @@ custom:
 
 provider:
   name: aws
+  region: ${env:AWS_REGION}
   runtime: nodejs6.10
+  stage: beta
 
 functions:
   hello:
+    description: Says hello!
     handler: handler.hello
-    events:
-      - http:
-          method: get
-          path: hello
-  world:
-      handler: handler.world
-      events:
-        - http:
-            method: get
-            path: world
