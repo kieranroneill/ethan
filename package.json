@@ -1,13 +1,17 @@
 {
-  "name": "grub",
+  "name": "grubby",
   "private": true,
   "version": "0.0.1",
-  "description": "A chat bot.",
+  "description": "Grubby is your buddy when you can't decide what to get for lunch.",
   "main": "src/index.js",
   "author": {
     "name": "Kieran O'Neill",
     "email": "kieran.oneill@element43.xyz",
     "url": "http://element43.xyz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieranroneill/grubby.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "engines": {

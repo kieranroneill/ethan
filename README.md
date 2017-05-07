@@ -1,6 +1,6 @@
 # Grub
 
-[![CircleCI](https://circleci.com/gh/kieranroneill/reecho/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/reecho/tree/master)
+[![CircleCI](https://circleci.com/gh/kieranroneill/grub/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/grub/tree/master)
 
 ## Development
 
