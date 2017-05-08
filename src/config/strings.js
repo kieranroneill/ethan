@@ -1,11 +1,11 @@
 export default {
     responses: {
         defaults: {
-            name: 'good-looking'
+            name: 'good-looking',
+            weather: 'fine day'
         },
         hello: 'Hey {+name}! How are you doing on this {+weather}?',
         weather: {
-            default: 'fine day',
             ['Additional']: 'mundane day',
             ['Atmosphere']: 'misty day',
             ['Clear']: 'glorious day',

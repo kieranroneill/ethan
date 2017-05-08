@@ -39,7 +39,7 @@ describe('hello handler', () => {
 
         hello(mockInputEvent, null, (error, response) => {
             expect(error).to.be.null;
-            expect(response.dialogAction.message.content).to.contain(strings.responses.weather.default);
+            expect(response.dialogAction.message.content).to.contain(strings.responses.defaults.weather);
 
             done();
         });

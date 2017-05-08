@@ -14,7 +14,7 @@ export default function hello(event, context, callback) {
 
     WeatherApiService.getCurrentWeather({ q: ['London', 'GB'] })
         .then(result => weather = strings.responses.weather[result])
-        .catch(() => weather = strings.responses.weather.default)
+        .catch(() => weather = strings.responses.defaults.weather)
         .finally(() => {
             const message = strings.responses.hello
                 .replace('{+name}', name)
