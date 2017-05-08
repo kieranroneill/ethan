@@ -29,6 +29,7 @@
     "start": "serverless webpack serve --port 1337"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "bluebird": "^3.5.0",
     "lodash": "^4.17.4"
   },
@@ -41,13 +42,13 @@
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.16",
     "eslint": "^3.19.0",
-    "istanbul": "^0.4.5",
+    "istanbul": "^1.0.0-alpha.2",
     "mocha": "^3.3.0",
     "mocha-junit-reporter": "^1.13.0",
     "mocha-multi-reporters": "^1.1.4",
     "path": "^0.12.7",
     "serverless-webpack": "^1.0.0-rc.4",
-    "sinon": "^2.1.0",
+    "sinon": "^2.2.0",
     "webpack": "^1.13.1",
     "webpack-node-externals": "^1.5.4",
     "webpack-notifier": "^1.5.0"
