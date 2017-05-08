@@ -1,7 +1,14 @@
 const defaults = {
     weatherApi: {
         baseUrl: 'https://api.openweathermap.org/data/2.5',
-        apiKey: 'f7c7e51055362ba28ab8d2b3591856c9'
+        apiKey: 'f7c7e51055362ba28ab8d2b3591856c9',
+        parameters: {
+            clear: 'Clear',
+            cloudy: 'Cloudy',
+            drizzle: 'Drizzle',
+            rain: 'Rain',
+            snow: 'Snow'
+        }
     },
 
     input: {

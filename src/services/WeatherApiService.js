@@ -4,6 +4,9 @@ import Promise from 'bluebird';
 // Config.
 import defaults from '../config/defaults';
 
+// Services.
+import { httpGet } from './HttpService';
+
 // Utilities.
 import { httpUtil } from '../utilities/index';
 
@@ -15,14 +18,14 @@ import { httpUtil } from '../utilities/index';
 function createRequest(endpoint) {
     const url = defaults.weatherApi.baseUrl + endpoint + '&appid=' + defaults.weatherApi.apiKey;
 
-    return Promise.resolve(axios.get(url)); // Covert to bluebird promise.
+    return httpGet(url);
 }
 
 /**
  * Creates a weather request.
  * @param query the query parameters to use in the request.
- * @returns {Promise} an async get request to the server.
+ * @returns {Promise} a promise containing the current weather.
  */
 export function getCurrentWeather(query) {
-    return createRequest('/weather?' + httpUtil.toQueryString(query));
+    return createRequest('/weather?' + httpUtil.toQueryString(query)).then(response => response.weather[0].main);
 }
