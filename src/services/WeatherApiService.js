@@ -1,6 +1,3 @@
-import axios from 'axios';
-import Promise from 'bluebird';
-
 // Config.
 import defaults from '../config/defaults';
 
