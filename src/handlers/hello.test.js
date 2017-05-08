@@ -11,6 +11,8 @@ import { WeatherApiService } from '../services/index';
 import hello from './hello';
 
 describe('hello handler', () => {
+    const weather = 'Rain';
+
     beforeEach(function() {
         this.getCurrentWeatherStub = stub(WeatherApiService, 'getCurrentWeather');
     });
@@ -20,7 +22,7 @@ describe('hello handler', () => {
     });
 
     it('should return the correct response parameters', function(done) {
-        this.getCurrentWeatherStub.resolves(strings.responses.weather['Clear']);
+        this.getCurrentWeatherStub.resolves(weather);
 
         hello(mockInputEvent, null, (error, response) => {
             expect(error).to.be.null;
@@ -38,6 +40,18 @@ describe('hello handler', () => {
         hello(mockInputEvent, null, (error, response) => {
             expect(error).to.be.null;
             expect(response.dialogAction.message.content).to.contain(strings.responses.weather.default);
+
+            done();
+        });
+    });
+
+    it('should return the current weather in the response', function(done) {
+        this.getCurrentWeatherStub.resolves(weather);
+
+        hello(mockInputEvent, null, (error, response) => {
+            expect(error).to.be.null;
+            expect(response.dialogAction.message.content)
+                .to.contain(strings.responses.weather[weather]);
 
             done();
         });

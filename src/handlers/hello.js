@@ -1,5 +1,4 @@
 // Config.
-import defaults from '../config/defaults';
 import strings from '../config/strings';
 
 // Services.
@@ -10,11 +9,11 @@ import { CloseLexResponse } from '../responses/index';
 
 export default function hello(event, context, callback) {
     let name = strings.responses.defaults.name;
-    let weather = strings.responses.weather.default;
+    let weather;
     //const input = event.currentIntent.inputTranscript;
 
     WeatherApiService.getCurrentWeather({ q: ['London', 'GB'] })
-        .then(result => weather = strings.responses.weather[defaults.weatherApi.parameters[result]])
+        .then(result => weather = strings.responses.weather[result])
         .catch(() => weather = strings.responses.weather.default)
         .finally(() => {
             const message = strings.responses.hello

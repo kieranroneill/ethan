@@ -1,5 +1,3 @@
-import defaults from './defaults';
-
 export default {
     responses: {
         defaults: {
@@ -8,11 +6,15 @@ export default {
         hello: 'Hey {+name}! How are you doing on this {+weather}?',
         weather: {
             default: 'fine day',
-            [defaults.weatherApi.parameters.clear]: 'glorious day',
-            [defaults.weatherApi.parameters.cloudy]: 'cloudy day',
-            [defaults.weatherApi.parameters.drizzle]: 'miserable day',
-            [defaults.weatherApi.parameters.rain]: 'miserable day',
-            [defaults.weatherApi.parameters.snow]: 'wintry day'
+            ['Additional']: 'mundane day',
+            ['Atmosphere']: 'misty day',
+            ['Clear']: 'glorious day',
+            ['Clouds']: 'cloudy day',
+            ['Drizzle']: 'miserable day',
+            ['Extreme']: 'terrifying day',
+            ['Rain']: 'miserable day',
+            ['Snow']: 'wintry day',
+            ['Thunderstorm']: 'thundering day'
         }
     }
 };
