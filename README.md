@@ -1,6 +1,13 @@
-# Grub
+# Ethan
 
-[![CircleCI](https://circleci.com/gh/kieranroneill/grub/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/grub/tree/master)
+Ethan is your know-it-all buddy when it comes to all things Ethereum.
+
+## Features
+
+* Get real-time ethereum prices.
+* ...and much more!
+
+[![CircleCI](https://circleci.com/gh/kieranroneill/ethan/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/ethan/tree/master)
 
 ## Development
 
@@ -17,7 +24,7 @@
     
 ### 1. CircleCI
 
-To setup CircleCI, the following environment variables are needed for full deployment:
+To setup CircleCI, the following environment variables are needed for deployment to AWS Lambda:
 
 | Name | Description |
 | :--- | :--- |

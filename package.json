@@ -1,8 +1,8 @@
 {
-  "name": "grubby",
+  "name": "ethan",
   "private": true,
   "version": "0.0.1",
-  "description": "Grubby is your buddy when you can't decide what to get for lunch.",
+  "description": "Ethan is your know-it-all buddy when it comes to all things Ethereum.",
   "main": "src/index.js",
   "author": {
     "name": "Kieran O'Neill",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kieranroneill/grubby.git"
+    "url": "https://github.com/kieranroneill/ethan.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "engines": {
