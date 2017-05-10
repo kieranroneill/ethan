@@ -4,13 +4,21 @@ const defaults = {
     },
 
     currencies: {
+        EUR: {
+            aliases: ['€', 'eur', 'euro', 'euros'],
+            code: 'EUR'
+        },
         GBP: {
             aliases: ['£', 'gbp', 'pound', 'pounds'],
             code: 'GBP'
         },
-        EUR: {
-            aliases: ['€', 'eur', 'euro', 'euros'],
-            code: 'EUR'
+        JPY: {
+            aliases: ['¥', 'jpy', 'yen'],
+            code: 'JPY'
+        },
+        CHF: {
+            aliases: ['chf', 'franc'],
+            code: 'CHF'
         },
         USD: {
             aliases: ['$', 'usd', 'dollar', 'dollars'],
