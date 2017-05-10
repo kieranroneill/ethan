@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
-import { getCurrencyCode } from './currency.util';
+// Utilities.
+import { getCurrencyCode, isCurrencySupported } from './currency.util';
 
 describe('utilities/currency', () => {
     describe('getCurrencyCode()', () => {
@@ -20,6 +21,26 @@ describe('utilities/currency', () => {
             const result = getCurrencyCode('pound');
 
             expect(result).to.be.equal('GBP');
+        });
+    });
+
+    describe('isCurrencySupported()', () => {
+        it('should return false if the code is undefined', () => {
+            const result = isCurrencySupported();
+
+            expect(result).to.be.false;
+        });
+
+        it('should return false if the code is not supported', () => {
+            const result = isCurrencySupported('unknown');
+
+            expect(result).to.be.false;
+        });
+
+        it('should return true if the code is supported', () => {
+            const result = isCurrencySupported('USD');
+
+            expect(result).to.be.true;
         });
     });
 });
