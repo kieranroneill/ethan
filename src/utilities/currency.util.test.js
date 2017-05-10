@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 // Utilities.
 import { getCurrencyCode, isCurrencySupported } from './currency.util';
 

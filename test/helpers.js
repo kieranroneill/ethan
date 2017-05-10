@@ -23,6 +23,17 @@ export const mockInputEvent = {
 };
 
 /**
+ * A mock object returned from a Coinbase spot price request.
+ * @see https://developers.coinbase.com/api/v2#get-spot-price
+ */
+export const mockPriceResponse = {
+    data: {
+        amount: '80.62',
+        currency: 'USD'
+    }
+};
+
+/**
  * A mock object returned from a weather query to the OpenWeatherMap API
  * @see https://openweathermap.org/current#parameter
  */
