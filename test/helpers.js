@@ -23,14 +23,13 @@ export const mockInputEvent = {
 };
 
 /**
- * A mock object returned from a Coinbase spot price request.
- * @see https://developers.coinbase.com/api/v2#get-spot-price
+ * A mock object returned from a CryptoCompare price request.
+ * https://www.cryptocompare.com/api/#-api-data-price-
  */
 export const mockPriceResponse = {
-    data: {
-        amount: '80.62',
-        currency: 'USD'
-    }
+    USD: 89.48,
+    EUR: 82.2,
+    GBP: 69.37
 };
 
 /**

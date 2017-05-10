@@ -96,5 +96,18 @@ describe('CryptoCompareApiService', () => {
                 done();
             });
         });
+
+        it('should return all specified currencies', function(done) {
+            const codes = _.keys(mockPriceResponse); // Use keys from the mock response.
+
+            this.httpGetStub.resolves(mockPriceResponse);
+
+            getCurrentPrice.apply(null, codes)
+                .then(result => {
+                    _.forEach(result, (value, key) => expect(codes).to.contain(key)); // Check all currencies are returned.
+
+                    done();
+                });
+        });
     });
 });
