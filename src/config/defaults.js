@@ -1,7 +1,29 @@
 const defaults = {
-    weatherApi: {
-        baseUrl: 'https://api.openweathermap.org/data/2.5',
-        apiKey: 'f7c7e51055362ba28ab8d2b3591856c9'
+    cryptoCompareApi: {
+        baseUrl: 'https://min-api.cryptocompare.com/data'
+    },
+
+    currencies: {
+        EUR: {
+            aliases: ['€', 'eur', 'euro', 'euros'],
+            code: 'EUR'
+        },
+        GBP: {
+            aliases: ['£', 'gbp', 'pound', 'pounds'],
+            code: 'GBP'
+        },
+        JPY: {
+            aliases: ['¥', 'jpy', 'yen'],
+            code: 'JPY'
+        },
+        CHF: {
+            aliases: ['chf', 'franc'],
+            code: 'CHF'
+        },
+        USD: {
+            aliases: ['$', 'usd', 'dollar', 'dollars'],
+            code: 'USD'
+        }
     },
 
     input: {
@@ -43,6 +65,11 @@ const defaults = {
                 elicitSlot: 'ElicitSlot'
             }
         }
+    },
+
+    weatherApi: {
+        baseUrl: 'https://api.openweathermap.org/data/2.5',
+        apiKey: 'f7c7e51055362ba28ab8d2b3591856c9'
     }
 };
 

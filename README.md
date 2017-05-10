@@ -1,6 +1,17 @@
-# Grub
+[![CircleCI](https://circleci.com/gh/kieranroneill/ethan/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/ethan/tree/master)
 
-[![CircleCI](https://circleci.com/gh/kieranroneill/grub/tree/master.svg?style=shield&circle-token=ea97ae777bee8f3533765f922792316b7227a233)](https://circleci.com/gh/kieranroneill/grub/tree/master)
+# Ethan
+
+Ethan is your know-it-all buddy when it comes to all things Ethereum.
+
+## Features
+
+* Get real-time ether prices.
+* Check your ether wallet balance.
+* Send ether to an address.
+* ...and much more!
+
+Check out the public [Trello](https://trello.com/b/Y0hXCzGN/ethan-aws-chatbot-challenge) board for incoming features and fixes.
 
 ## Development
 
@@ -17,7 +28,7 @@
     
 ### 1. CircleCI
 
-To setup CircleCI, the following environment variables are needed for full deployment:
+To setup CircleCI, the following environment variables are needed for deployment to AWS Lambda:
 
 | Name | Description |
 | :--- | :--- |

@@ -3,8 +3,8 @@ machine:
     Europe/London
 
   environment:
-    YARN_VERSION: 0.20.3
     PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    YARN_VERSION: 0.20.3
 
   node:
     # LTS (as of 12/04/2017)

@@ -23,6 +23,16 @@ export const mockInputEvent = {
 };
 
 /**
+ * A mock object returned from a CryptoCompare price request.
+ * https://www.cryptocompare.com/api/#-api-data-price-
+ */
+export const mockPriceResponse = {
+    USD: 89.48,
+    EUR: 82.2,
+    GBP: 69.37
+};
+
+/**
  * A mock object returned from a weather query to the OpenWeatherMap API
  * @see https://openweathermap.org/current#parameter
  */
