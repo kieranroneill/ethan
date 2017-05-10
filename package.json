@@ -24,7 +24,7 @@
     "istanbul": "istanbul",
     "lint": "eslint --ext .js .",
     "mocha": "mocha",
-    "test": "NODE_ENV=test istanbul cover _mocha -- './src/**/*.test.js'",
+    "test": "istanbul cover _mocha -- './src/**/*.test.js'",
     "serverless": "serverless",
     "start": "serverless webpack serve --port 1337"
   },

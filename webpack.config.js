@@ -35,11 +35,6 @@ module.exports = {
             sourceMap: false,
             mangle: true
         }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
         new WebpackNotifierPlugin({
             title: 'UNICORN POWER_UP!!!',
             contentImage: path.resolve(__dirname, 'unicorn.png'),

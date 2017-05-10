@@ -1,4 +1,4 @@
-service: grub
+service: ethan
 
 plugins:
   - serverless-webpack
@@ -16,3 +16,6 @@ functions:
   hello:
     description: Says hello!
     handler: handler.hello
+  price:
+    description: Gets the current ether price for supported currencies
+    handler: handler.price
