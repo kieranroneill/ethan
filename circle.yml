@@ -3,7 +3,6 @@ machine:
     Europe/London
 
   environment:
-    NODE_ENV: production
     PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
     YARN_VERSION: 0.20.3
 
