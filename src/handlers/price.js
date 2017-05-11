@@ -14,16 +14,25 @@ import { CryptoCompareApiService } from '../services/index';
 import { currencyUtil } from '../utilities/index';
 
 export default function price(event, context, callback) {
+    const currency = event.currentIntent.slots[defaults.input.slotTypes.currency];
+    const currencyCode = currencyUtil.getCurrencyCode(currency); // Determine the currency code.
     const response = new CloseLexResponse(event.sessionAttributes);
-    const currencyCode = currencyUtil.getCurrencyCode(event.currentIntent.slots[defaults.input.slotTypes.currency]); // Determine the currency code.
 
     CryptoCompareApiService.getCurrentPrice(currencyCode)
         .then(result => {
-            // if(!currencyCode) {
-            //     message
-            // }
+            let message;
 
-            response.setResponseMessage(strings.responses.defaults.default);
+            if(currencyCode) {
+                message = strings.responses.price.found
+                    .replace('{+currencyCode}', currencyCode)
+                    .replace('{+price}', result[currencyCode]); // Get the price for the currency code.
+            }
+            else {
+                message = strings.responses.price.notFound
+                    .replace('{+currency}', currency);
+            }
+
+            response.setResponseMessage(message);
         })
         .catch(() => response.setResponseMessage(_.sample(strings.responses.errors))) // Get a random error message.
         .finally(() => callback(null, response.toResponse()));

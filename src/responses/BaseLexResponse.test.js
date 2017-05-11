@@ -2,7 +2,9 @@ import _ from 'lodash';
 
 // Config.
 import defaults from '../config/defaults';
+import strings from '../config/strings';
 
+// Responses.
 import BaseLexResponse from './BaseLexResponse';
 
 describe('BaseLexResponse', () => {
@@ -35,7 +37,7 @@ describe('BaseLexResponse', () => {
             expect(this.response.dialogAction.message).to.have.property('contentType')
                 .to.equal(defaults.response.dialog.contentType.plainText);
             expect(this.response.dialogAction.message).to.have.property('content')
-                .to.be.null;
+                .to.equal(strings.responses.defaults.default);
 
             expect(this.response.dialogAction).to.have.property('intentName')
                 .to.be.null;
