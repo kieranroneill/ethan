@@ -39,6 +39,9 @@ const defaults = {
         outputDialogMode: {
             text: 'Text',
             voice: 'Voice'
+        },
+        slotTypes: {
+            currency: 'CurrencySlot'
         }
     },
 

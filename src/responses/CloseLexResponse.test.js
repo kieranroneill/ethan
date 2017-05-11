@@ -34,14 +34,6 @@ describe('CloseLexResponse', () => {
         });
     });
 
-    describe('setResponseMessage()', function() {
-        it('should set the response message', function() {
-            this.response.setResponseMessage(message);
-
-            expect(this.response.dialogAction.message.content).to.equal(message);
-        });
-    });
-
     describe('toResponse()', function() {
         it('should return the default response', function() {
             const result = this.response.toResponse();

@@ -16,10 +16,6 @@ class CloseLexResponse extends BaseLexResponse {
         this.dialogAction.message.content = message;
     }
 
-    setResponseMessage(message) {
-        this.dialogAction.message.content = message;
-    }
-
     /**
      * Returns a simple fulfilled response.
      * @returns {Object}

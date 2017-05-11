@@ -1,5 +1,6 @@
 // Config.
 import defaults from '../config/defaults';
+import strings from '../config/strings';
 
 class BaseLexResponse {
     constructor(sessionAttributes = {}) {
@@ -9,7 +10,7 @@ class BaseLexResponse {
             fulfillmentState: defaults.response.dialog.fulfillmentState.fulfilled,
             message: {
                 contentType: defaults.response.dialog.contentType.plainText,
-                content: null // Message to convey to the user.
+                content: strings.responses.defaults.default // Message to convey to the user.
             },
             intentName: null,
             slots: null,
@@ -20,6 +21,10 @@ class BaseLexResponse {
             contentType: defaults.response.card.contentType.generic,
             genericAttachments: []
         };
+    }
+
+    setResponseMessage(message) {
+        this.dialogAction.message.content = message;
     }
 }
 

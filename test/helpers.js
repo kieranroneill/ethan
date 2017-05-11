@@ -11,10 +11,11 @@ export const mockInputEvent = {
         version: '9000'
     },
     currentIntent: {
-        name: 'HelloIntent',
         confirmationStatus: defaults.input.confirmationStatus.none,
-        inputTranscript: 'Hello'
+        name: 'HelloIntent',
+        slots: {}
     },
+    inputTranscript: 'Hello',
     invocationSource: defaults.input.invocationSource.fulfillmentCodeHook,
     messageVersion: '1.0',
     outputDialogMode: defaults.input.outputDialogMode.text,

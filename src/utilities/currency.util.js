@@ -4,12 +4,12 @@ import _ from 'lodash';
 import defaults from '../config/defaults';
 
 /**
- * Checks if the currency exists for a given alias. If no alias can be matched the USD code is returned.
+ * Checks if the currency exists for a given alias.
  * @param alias the alias to check.
- * @returns {string} a supported currency code or the default (USD).
+ * @returns {string} a supported currency code or undefined.
  */
 export function getCurrencyCode(alias) {
-    let code = defaults.currencies.USD.code;
+    let code;
 
     if(alias) {
         _.forEach(defaults.currencies, value => {

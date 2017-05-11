@@ -59,4 +59,14 @@ describe('BaseLexResponse', () => {
                 .to.be.an('array');
         });
     });
+
+    describe('setResponseMessage()', function() {
+        it('should set the response message', function() {
+            const message = 'Tulips or lilies?';
+
+            this.response.setResponseMessage(message);
+
+            expect(this.response.dialogAction.message.content).to.equal(message);
+        });
+    });
 });

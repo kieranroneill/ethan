@@ -6,13 +6,13 @@ describe('utilities/currency', () => {
         it('should return the default "USD" symbol if the alias is undefined', () => {
             const result = getCurrencyCode();
 
-            expect(result).to.be.equal('USD');
+            expect(result).to.be.undefined;
         });
 
         it('should return the default "USD" symbol if the alias is not recognised', () => {
             const result = getCurrencyCode('intergalactic ooze');
 
-            expect(result).to.be.equal('USD');
+            expect(result).to.be.undefined;
         });
 
         it('should return the currency symbol if the alias is recognised', () => {
