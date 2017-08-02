@@ -17,7 +17,7 @@ const defaults = {
             code: 'JPY'
         },
         CHF: {
-            aliases: ['chf', 'franc'],
+            aliases: ['chf', 'franc', 'francs'],
             code: 'CHF'
         },
         USD: {
